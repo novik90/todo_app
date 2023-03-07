@@ -1,10 +1,20 @@
 import React from "react";
+import Container from "./components/Container";
+import TodoItem from "./components/TodoItem";
+
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <h1>hello world</h1>
+      <Container size="medium">
+        <Container type="ghost" size="medium">
+          <TodoItem />
+          <TodoItem />
+          <TodoItem />
+          <TodoItem />
+        </Container>
+      </Container>
     </div>
   );
 }
