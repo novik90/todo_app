@@ -1,12 +1,19 @@
+import { FC } from "react";
+
 import "./TodoItem.css";
 import Icon from "../Icons/Icon";
 
-const TodoItem = () => {
+interface ITodo {
+  title: string;
+  description: string;
+}
+
+const TodoItem: FC<ITodo> = ({ title, description }) => {
   return (
     <section className="item">
       <div className="item__desc">
-        <h3>Item 1</h3>
-        <p>A little description for this item</p>
+        <h3>{title}</h3>
+        <p>{description}</p>
       </div>
       <div className="item__icon">
         <Icon name={"Mark"} />
