@@ -1,6 +1,5 @@
-import React from "react";
-
 import "./TodoItem.css";
+import Icon from "../Icons/Icon";
 
 const TodoItem = () => {
   return (
@@ -9,7 +8,9 @@ const TodoItem = () => {
         <h3>Item 1</h3>
         <p>A little description for this item</p>
       </div>
-      <div className="item__icon">+</div>
+      <div className="item__icon">
+        <Icon name={"Mark"} />
+      </div>
     </section>
   );
 };
