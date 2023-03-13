@@ -5,6 +5,7 @@ import "./Icon.css";
 
 interface IconProperties {
   className?: string;
+  color?: string;
   viewBox?: string;
   title?: string;
   style?: any;
@@ -13,14 +14,22 @@ interface IconProperties {
   name: IconNames;
 }
 
-const Icon: FC<IconProperties> = ({ viewBox, title, size, name, ...props }) => (
-  <svg width={size} height={size} viewBox={viewBox} {...props}>
+const Icon: FC<IconProperties> = ({
+  viewBox,
+  color,
+  title,
+  size,
+  name,
+  ...props
+}) => (
+  <svg stroke={color} width={size} height={size} viewBox={viewBox} {...props}>
     {title && <title>{title}</title>}
     {Icons[name]()}
   </svg>
 );
 
 Icon.defaultProps = {
+  color: "#782FEF",
   viewBox: "0 0 24 24",
   size: "24",
   role: "img",

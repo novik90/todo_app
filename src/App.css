@@ -5,29 +5,3 @@
   align-items: center;
   padding-top: 100px;
 }
-
-.container-default {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 12px;
-  gap: 32px;
-  background-color: #ffffff;
-  border: 1px solid #f7effe;
-
-  width: 650px;
-}
-
-.container-ghost {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
-  gap: 12px;
-  width: 100%;
-}
-
-.container-medium {
-  border-radius: 22px;
-}

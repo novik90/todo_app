@@ -2,20 +2,32 @@ import React, { ReactNode } from "react";
 
 import "./Container.css";
 
-type Props = {
+interface ContainerProperties {
+  size?: "small" | "medium" | "large";
+  direction?: "row" | "col";
   className?: string;
-  type?: "ghost" | "default";
-  size: "small" | "medium" | "large";
-  children: ReactNode;
-};
+  children?: ReactNode;
+}
 
-const Container: React.FC<Props> = ({
+const Container: React.FC<ContainerProperties> = ({
   children,
   size,
-  type = "default",
+  direction,
   ...props
 }) => {
-  return <section {...props}>{children}</section>;
+  let c = "container";
+  const classes = `${c} ${c}__${size} ${c}__${direction}`;
+
+  return (
+    <div className={classes} {...props}>
+      {children}
+    </div>
+  );
+};
+
+Container.defaultProps = {
+  size: "medium",
+  direction: "col",
 };
 
 export default Container;
