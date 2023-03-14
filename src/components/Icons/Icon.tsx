@@ -14,15 +14,8 @@ interface IconProperties {
   name: IconNames;
 }
 
-const Icon: FC<IconProperties> = ({
-  viewBox,
-  color,
-  title,
-  size,
-  name,
-  ...props
-}) => (
-  <svg stroke={color} width={size} height={size} viewBox={viewBox} {...props}>
+const Icon: FC<IconProperties> = ({ viewBox, color, title, size, name }) => (
+  <svg stroke={color} width={size} height={size} viewBox={viewBox}>
     {title && <title>{title}</title>}
     {Icons[name]()}
   </svg>
